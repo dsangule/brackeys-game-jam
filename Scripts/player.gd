@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var speed = 300.0
 
 var isMoving = false
+var isAttacking = false
 var direction = "none"
 
 func _physics_process(delta):
@@ -32,6 +33,7 @@ func _physics_process(delta):
 	move_and_slide()	# doesn't work without this
 	
 	if isMoving == true:
+		isAttacking = false
 		if direction == "up":
 			anim.play("walk_up")
 		elif direction == "down":
@@ -41,7 +43,7 @@ func _physics_process(delta):
 		elif direction == "right":
 			anim.play("walk_right")
 		
-	elif isMoving == false:
+	elif isMoving == false && !isAttacking:
 		if direction == "up":
 			anim.play("idle_up")
 		elif direction == "down":
@@ -50,3 +52,14 @@ func _physics_process(delta):
 			anim.play("idle_left")
 		elif direction == "right":
 			anim.play("idle_right")
+			
+	if Input.is_action_just_pressed("attack"):
+		isAttacking = true
+		if direction == "up":
+			anim.play("attack_up")
+		elif direction == "down":
+			anim.play("attack_down")
+		elif direction == "left":
+			anim.play("attack_left")
+		elif direction == "right":
+			anim.play("attack_right")
