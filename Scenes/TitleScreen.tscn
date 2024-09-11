@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4iwhuhn0n5oa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fc0y"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8i36b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1oun"]
+texture = SubResource("CanvasTexture_8i36b")
+modulate_color = Color(0.605674, 1.66051e-06, 3.85046e-07, 1)
+
+[sub_resource type="GDScript" id="GDScript_bm4nk"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	preload(\"res://Scenes/Devtest.tscn\")
+	pass # Replace with function body.
+
+func _pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/Devtest.tscn\")
+	pass
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="GameTitle" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 133.0
+offset_right = 766.0
+offset_bottom = 182.0
+size_flags_horizontal = 4
+text = "<<GAME TITLE>>"
+label_settings = SubResource("LabelSettings_4fc0y")
+horizontal_alignment = 1
+uppercase = true
+text_direction = 1
+
+[node name="DevTest" type="Button" parent="."]
+offset_left = 352.0
+offset_top = 182.0
+offset_right = 768.0
+offset_bottom = 241.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Only for testing the game. To be removed/hidden when completed."
+theme_override_styles/hover = SubResource("StyleBoxTexture_c1oun")
+text = "DEV TEST ENVIRONMENT"
+script = SubResource("GDScript_bm4nk")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 352.0
+offset_top = 264.0
+offset_right = 768.0
+offset_bottom = 345.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "CONTINUE"
+
+[node name="New Game" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 367.0
+offset_right = 766.0
+offset_bottom = 448.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "New Game"
+
+[node name="Credits" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 509.0
+offset_right = 766.0
+offset_bottom = 532.0
+size_flags_horizontal = 4
+text = "Made by Aeth, Deiz, & Xan
+2024"
+label_settings = SubResource("LabelSettings_4fc0y")
+horizontal_alignment = 1
+uppercase = true
+text_direction = 1
