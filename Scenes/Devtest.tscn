@@ -9,6 +9,7 @@ position = Vector2(604, 319)
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
 scale = Vector2(5, 5)
 collision_layer = 2
+speed = null
 
 [node name="Coin" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(-199, -57)
