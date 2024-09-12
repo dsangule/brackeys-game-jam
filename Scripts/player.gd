@@ -1,65 +1,33 @@
 extends CharacterBody2D
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim_tree = $AnimationTree
 
 @export var speed = 300.0
+var direction = Vector2.ZERO
 
 var isMoving = false
 var isAttacking = false
-var direction = "none"
+
+func _process(delta):
+	update_anim_params()
 
 func _physics_process(delta):
 	velocity = Vector2()
+	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
-	if Input.is_action_pressed("up"):
-		velocity.y -= speed
-		isMoving = true
-		direction = "up"
-	if Input.is_action_pressed("down"):
-		velocity.y += speed
-		isMoving = true
-		direction = "down"
-	if Input.is_action_pressed("left"):
-		velocity.x -= speed
-		isMoving = true
-		direction = "left"
-	if Input.is_action_pressed("right"):
-		velocity.x += speed
-		isMoving = true
-		direction = "right"
-	if velocity == Vector2.ZERO:
-		isMoving = false
+	if direction:
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
 	
 	move_and_slide()	# doesn't work without this
+
+func update_anim_params():
+	anim_tree.set("parameters/conditions/isIdle", velocity == Vector2.ZERO)
+	anim_tree.set("parameters/conditions/isMoving", velocity != Vector2.ZERO)
+	anim_tree.set("parameters/conditions/isAttacking", Input.is_action_just_pressed("attack"))
 	
-	if isMoving == true:
-		isAttacking = false
-		if direction == "up":
-			anim.play("walk_up")
-		elif direction == "down":
-			anim.play("walk_down")
-		elif direction == "left":
-			anim.play("walk_left")
-		elif direction == "right":
-			anim.play("walk_right")
-		
-	elif isMoving == false && !isAttacking:
-		if direction == "up":
-			anim.play("idle_up")
-		elif direction == "down":
-			anim.play("idle_down")
-		elif direction == "left":
-			anim.play("idle_left")
-		elif direction == "right":
-			anim.play("idle_right")
-			
-	if Input.is_action_just_pressed("attack"):
-		isAttacking = true
-		if direction == "up":
-			anim.play("attack_up")
-		elif direction == "down":
-			anim.play("attack_down")
-		elif direction == "left":
-			anim.play("attack_left")
-		elif direction == "right":
-			anim.play("attack_right")
+	if direction != Vector2.ZERO:
+		anim_tree.set("parameters/Idle/blend_position", direction)
+		anim_tree.set("parameters/Walk/blend_position", direction)
+		anim_tree.set("parameters/Attack/blend_position", direction)
