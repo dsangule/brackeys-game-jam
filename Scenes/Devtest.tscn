@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4it52iicxrkh"]
+[gd_scene load_steps=3 format=3 uid="uid://b4it52iicxrkh"]
 
 [ext_resource type="PackedScene" uid="uid://dg6tjqplm3ce8" path="res://Assets/Prefabs/player.tscn" id="1_4h6vs"]
+[ext_resource type="PackedScene" uid="uid://cwt2puq3mm1t3" path="res://Assets/sprites/coin.tscn" id="2_t35df"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(604, 319)
 
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
 scale = Vector2(5, 5)
+collision_layer = 2
+
+[node name="Coin" parent="." instance=ExtResource("2_t35df")]
+position = Vector2(-199, -57)
+scale = Vector2(3, 3)
+
+[node name="Coin2" parent="." instance=ExtResource("2_t35df")]
+position = Vector2(-147, 114)
+scale = Vector2(3, 3)
+
+[node name="Coin3" parent="." instance=ExtResource("2_t35df")]
+position = Vector2(104, 125)
+scale = Vector2(3, 3)
