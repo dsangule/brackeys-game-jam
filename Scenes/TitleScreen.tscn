@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4iwhuhn0n5oa"]
+[gd_scene load_steps=6 format=3 uid="uid://c4iwhuhn0n5oa"]
+
+[ext_resource type="Script" path="res://Scenes/new_game.gd" id="1_wnyda"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4fc0y"]
 
@@ -69,8 +71,8 @@ offset_right = 766.0
 offset_bottom = 448.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-disabled = true
 text = "New Game"
+script = ExtResource("1_wnyda")
 
 [node name="Credits" type="Label" parent="."]
 offset_left = 350.0
