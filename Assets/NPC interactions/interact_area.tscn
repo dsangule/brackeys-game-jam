@@ -56,7 +56,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ytsg1"]
 radius = 27.0185
 
-[node name="InteractArea" type="Area2D"]
+[node name="Witch" type="Area2D"]
 scale = Vector2(0.75, 0.75)
 collision_layer = 512
 collision_mask = 0
