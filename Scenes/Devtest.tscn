@@ -11,24 +11,36 @@
 [ext_resource type="Texture2D" uid="uid://bk4l1a46vir0" path="res://Assets/sprites/env/Water_Tile.png" id="9_3ftoo"]
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
 [ext_resource type="Texture2D" uid="uid://c0dnautyxlwah" path="res://icon.svg" id="11_bjxvv"]
-[ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
 texture = ExtResource("3_n6qj5")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0273, 8, 8, -3.3125, 8, 5.92202, 4.1875, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.98438, 8, -3, 8, 6, -8, 6.03125)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.75781, 3.01562, 8, -3.99219, 8, -8, 6.04355)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.9375, 8, 4.0625, 8, 4.25, -8)
 1:1/0 = 0
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, 8, 3.0052, 8, 3.01625, -8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.8125, -8, 8, 1.98438, 8, -4.6875, 4, -8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.625, 8, -4.64062, 8, 2, -8, 1.98438)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.62934, -3.97748, -8, 2.99416, -8, -8, 2.0625)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.01562, 3.5625, -1.9375, -2.78125, 1.82812, -4, 8, 0, 8, 1.5625, 4.4375, 5, 1.375, 8, -0.015625)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.98852, 8, 2.92786, 2.41963, -1.375, -1.125, -8, -3.99957, -8, 0.0110483, -4.4375, 1.5625, -1.375, 5, 0.0331454, 8)
 0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.96643, -8, -3.98852, -4.13216, -2.98311, 1.03856, 3.97748, 5.44693, 8, 5.59056, 8, -2.0625, 4.4375, -1.5625, 1.375, -5, 0.046875, -8)
 1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.53125, -4.0625, 5.53125, -0.078125, 3.51562, 3, 1.14062, 4, -3.53125, 4.03125, -8, 0.125, -8, -1.5625, -4.4375, -5.0625, -1.76562, -8, -2.09375)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -218,6 +230,8 @@ texture = ExtResource("10_6sqs3")
 6:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ajnl1"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_rrerv")
 sources/1 = SubResource("TileSetAtlasSource_6h2pn")
 sources/2 = SubResource("TileSetAtlasSource_gr2gt")
@@ -238,7 +252,7 @@ collision_layer = 2
 speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="Coin" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(-199, -57)
@@ -249,11 +263,7 @@ position = Vector2(-147, 114)
 [node name="Coin3" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(104, 125)
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ajnl1")
-format = 2
-
-[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="."]
 visibility_layer = 16
 z_index = -1
 use_parent_material = true
@@ -271,5 +281,4 @@ interact_type = "text"
 interact_value = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_prw3c")
