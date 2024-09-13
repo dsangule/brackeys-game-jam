@@ -44,6 +44,6 @@ func check_nearest_actionable() -> void:
 			shortest_distance = distance
 			next_nearest_actionable = area
 		if next_nearest_actionable != nearest_actionable or not is_instance_valid(next_nearest_actionable):
-			nearest_actionable = next_nearest_actionable 
+			nearest_actionable = next_nearest_actionable
 			Events.emit_signal("nearest_actionable_changed", nearest_actionable)
 	
