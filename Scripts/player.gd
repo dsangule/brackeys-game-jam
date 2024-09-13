@@ -2,11 +2,17 @@ extends CharacterBody2D
 
 @onready var anim_tree = $AnimationTree
 
+@onready var all_interactions = []
+@onready var interactLabel = $"Interaction Components/InteractLabel"
+
 @export var speed = 300.0
 var direction = Vector2.ZERO
 
 var isMoving = false
 var isAttacking = false
+
+func _ready():
+	update_interactions()
 
 func _process(delta):
 	update_anim_params()
@@ -31,19 +37,23 @@ func update_anim_params():
 		anim_tree.set("parameters/Idle/blend_position", direction)
 		anim_tree.set("parameters/Walk/blend_position", direction)
 		anim_tree.set("parameters/Attack/blend_position", direction)
-		
 
-## Find the nearest actionable, if there is one
-func check_nearest_actionable() -> void:
-	var areas: Array[Area2D] = actionable_finder.get_overlapping_areas() 
-	var shortest_distances : float = INF
-	var next_nearest_actionables: Actionable = null
-	for area in areas:
-		var distances:float = area.global_position.distance_to(global_position)
-		if distance<shortest_distance:
-			shortest_distance = distance
-			next_nearest_actionable = area
-		if next_nearest_actionable != nearest_actionable or not is_instance_valid(next_nearest_actionable):
-			nearest_actionable = next_nearest_actionable 
-			Events.emit_signal("nearest_actionable_changed", nearest_actionable)
-	
+
+
+
+
+# INTERACTION METHODS
+
+func _on_interaction_area_area_entered(area):
+	all_interactions.insert(0, area)
+	update_interactions()
+
+func _on_interaction_area_area_exited(area):
+	all_interactions.erase(area)
+	update_interactions()
+
+func update_interactions():
+	if all_interactions:
+		interactLabel.text = all_interactions[0].interact_label
+	else:
+		interactLabel.text = ""

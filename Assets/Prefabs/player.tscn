@@ -910,12 +910,11 @@ states/Walk/position = Vector2(577, 200)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_pc5xw"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_f6xdu"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4gsv2"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_ti21s"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ahah2"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_gttkt"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_4wlw4")]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryui6"]
-radius = 5.99781
-height = 18.0
+radius = 14.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_b36x2")
-speed = null
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("2_ufww1")
@@ -944,13 +943,30 @@ parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(-0.991708, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="Direction" type="Marker2D" parent="."]
+[node name="Interaction Components" type="Marker2D" parent="."]
+z_index = 1
 
-[node name="ActionableFinder" type="Area2D" parent="Direction"]
+[node name="InteractionArea" type="Area2D" parent="Interaction Components"]
 collision_layer = 0
 collision_mask = 512
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
-position = Vector2(0, 11)
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Components/InteractionArea"]
 shape = SubResource("CapsuleShape2D_ryui6")
+
+[node name="InteractLabel" type="Label" parent="Interaction Components"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.0
+offset_top = -35.0
+offset_right = 93.0
+offset_bottom = -12.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Interaction Components/InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="Interaction Components/InteractionArea" to="." method="_on_interaction_area_area_exited"]
