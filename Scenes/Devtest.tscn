@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b4it52iicxrkh"]
+[gd_scene load_steps=28 format=4 uid="uid://b4it52iicxrkh"]
 
 [ext_resource type="PackedScene" uid="uid://dg6tjqplm3ce8" path="res://Assets/Prefabs/player.tscn" id="1_4h6vs"]
 [ext_resource type="PackedScene" uid="uid://cwt2puq3mm1t3" path="res://Assets/sprites/coin.tscn" id="2_t35df"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
 [ext_resource type="Texture2D" uid="uid://c0dnautyxlwah" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
+[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/NPC interactions/interact_area.tscn" id="13_gxk5x"]
+[ext_resource type="PackedScene" uid="uid://sme65i70wenv" path="res://Assets/NPC interactions/Actionables.tscn" id="14_qkxr6"]
+[ext_resource type="Script" path="res://Scripts/actionables.gd" id="15_05svw"]
+[ext_resource type="Resource" uid="uid://bdpftqisltlfe" path="res://Assets/NPC interactions/npc_basic_dialogue.dialogue" id="16_y8phi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
@@ -230,6 +234,9 @@ sources/7 = SubResource("TileSetAtlasSource_bwd8l")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prw3c"]
 size = Vector2(130, 130)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5s7l0"]
+radius = 60.0148
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(604, 319)
 
@@ -271,5 +278,14 @@ interact_type = "text"
 interact_value = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_prw3c")
+
+[node name="Witch" parent="." instance=ExtResource("13_gxk5x")]
+position = Vector2(71, -64)
+
+[node name="actionable" parent="Witch" instance=ExtResource("14_qkxr6")]
+script = ExtResource("15_05svw")
+dialogue_resource = ExtResource("16_y8phi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Witch/actionable"]
+shape = SubResource("CircleShape2D_5s7l0")

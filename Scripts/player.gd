@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 @onready var all_interactions = []
 @onready var interactLabel = $"Interaction Components/InteractLabel"
+@onready var actionable_finder =  $"Interaction Components/InteractionArea"
+
+var input_vector: Vector2 = Vector2.ZERO
 
 @export var speed = 300.0
 var direction = Vector2.ZERO
@@ -39,7 +42,13 @@ func update_anim_params():
 		anim_tree.set("parameters/Attack/blend_position", direction)
 
 
-
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			input_vector = Vector2.ZERO
+			return
 
 
 # INTERACTION METHODS
@@ -55,5 +64,7 @@ func _on_interaction_area_area_exited(area):
 func update_interactions():
 	if all_interactions:
 		interactLabel.text = all_interactions[0].interact_label
+
+
 	else:
 		interactLabel.text = ""
