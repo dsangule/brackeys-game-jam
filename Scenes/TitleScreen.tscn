@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4iwhuhn0n5oa"]
 
-[ext_resource type="Script" path="res://Scenes/new_game.gd" id="1_wnyda"]
+[ext_resource type="Script" path="res://Scenes/new_game_button.gd" id="1_wnyda"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4fc0y"]
 
