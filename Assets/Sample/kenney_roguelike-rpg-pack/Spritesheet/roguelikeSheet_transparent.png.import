@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccxm30tbyy7mr"
-path="res://.godot/imported/survivalgame-trees.png-c54c4a7e55287f5d74420bd584bf80bd.ctex"
+uid="uid://dsmbohieuvd3f"
+path="res://.godot/imported/roguelikeSheet_transparent.png-36460e1875c3723f539a01acad43d241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/env/survivalgame-trees.png"
-dest_files=["res://.godot/imported/survivalgame-trees.png-c54c4a7e55287f5d74420bd584bf80bd.ctex"]
+source_file="res://Assets/Sample/kenney_roguelike-rpg-pack/Spritesheet/roguelikeSheet_transparent.png"
+dest_files=["res://.godot/imported/roguelikeSheet_transparent.png-36460e1875c3723f539a01acad43d241.ctex"]
 
 [params]
 
