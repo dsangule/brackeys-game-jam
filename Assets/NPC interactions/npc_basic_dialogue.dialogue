@@ -1,15 +1,47 @@
-~ this_is_a_node_title
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
+~ witch_first
+Witch: [[Hi|Hello|Howdy]], this is some dialogue.
+Witch: Here are some choices.
 - First one
-	Nathan: You picked the first one.
+	Witch: You picked the first one.
 - Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
+	Witch: You picked the second one.
+- Start again => witch_first
 - End the conversation => END
-Nathan: For more information see the online documentation. 
+Witch: For more information see the online documentation. 
 => END
 
-~ second_time
-Nathan: [[Hi|Hello|Howdy]], this is not the first dialogue.
+~ witch_second
+Witch: [[Hi|Hello|Howdy]], this is not the first dialogue.
+=> END
 
+~ bug_first
+Bug: [[Hi|Hello|Howdy]], this is some dialogue.
+Bug: Here are some choices.
+- First one
+	Bug: You picked the first one.
+- Second one
+	Bug: You picked the second one.
+- Start again => witch_first
+- End the conversation => END
+Bug: For more information see the online documentation. 
+=> END
+
+~ bug_second
+Bug: [[Hi|Hello|Howdy]], this is not the first dialoBug.
+=> END
+
+~ storm_first
+Storm: [[Hi|Hello|Howdy]], this is some dialogue.
+Storm: Here are some choices.
+- First one
+	Storm: You picked the first one.
+- Second one
+	Storm: You picked the second one.
+- Start again => witch_first
+- End the conversation => END
+Storm: For more information see the online documentation. 
+=> END
+
+~ storm_second
+Storm: [[Hi|Hello|Howdy]], this is not the first dialogue.
+=> END
