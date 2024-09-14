@@ -42,7 +42,6 @@ func update_anim_params():
 		anim_tree.set("parameters/Attack/blend_position", direction)
 
 
-
 # PLAYER	( Important )
 func player():
 	pass
@@ -52,6 +51,7 @@ func player():
 # INTERACTION METHODS
 
 func _on_interaction_area_area_entered(area):
+	#print("Entered area:", area.name)
 	all_interactions.insert(0, area)
 	update_interactions()
 
