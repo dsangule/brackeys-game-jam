@@ -59,10 +59,8 @@ radius = 27.0185
 [node name="Witch" type="Area2D"]
 scale = Vector2(0.75, 0.75)
 collision_layer = 512
-collision_mask = 0
 monitoring = false
 script = ExtResource("1_qk72u")
-interact_type = "dialog"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0xvcs")

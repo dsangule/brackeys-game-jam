@@ -1,27 +1,30 @@
 class_name NPC extends Area2D
 
 @export var interact_label = "none"
-@export var interact_type = "none"
+@export var interact_type = "Dialog"
 @export var interact_value = "none"
 
 @export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "this_is_a_node_title"
-@export var dialogue_second: String = "second_time"
+@export var dialogue_npc_first: String = "npc_first"
+@export var dialogue_npc_second: String = "npc_second"
+#@export var dialogue_bug_first: String = "bug_first"
+#@export var dialogue_bug_second: String = "bug_second"
+#@export var dialogue_storm_first: String = "storm_first"
+#@export var dialogue_storm_second: String = "storm_second"
 
 
 
 func action() ->void:
 	print("Player is interacting with NPC")
+	#if(area.name == "Witch"):
 	if(has_met_player == false):
-		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+a		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_npc_first)
 	else:
-		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_second)
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_npc_second)
 	interact_with_player()
 		
-#func interact_with_player():
-	#print("NPC interaction logic here!")
 
-###NPC checks whether it has interacted with the player beforehand or not
+#NPC checks whether it has interacted with the player beforehand or not
 var has_met_player: bool = false  # Track if the player has interacted with this NPC
 
 #Called when the player interacts with the NPC

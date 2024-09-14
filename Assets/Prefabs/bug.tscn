@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://brurkv5hulays"]
+
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_sblwv"]
+[ext_resource type="Texture2D" uid="uid://cyxyia4lh1uab" path="res://Assets/Sample/Ball and Chain Bot/Ball and Chain Bot/idle.png" id="2_hxcus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2ux3"]
+atlas = ExtResource("2_hxcus")
+region = Rect2(42, 0, 42, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mns4m"]
+atlas = ExtResource("2_hxcus")
+region = Rect2(42, 39, 42, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cshf"]
+atlas = ExtResource("2_hxcus")
+region = Rect2(42, 78, 42, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ie4c"]
+atlas = ExtResource("2_hxcus")
+region = Rect2(42, 117, 42, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfdpx"]
+atlas = ExtResource("2_hxcus")
+region = Rect2(42, 156, 42, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gmcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2ux3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mns4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cshf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ie4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfdpx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbkso"]
+radius = 27.0185
+
+[node name="Bug" type="Area2D"]
+script = ExtResource("1_sblwv")
+dialogue_npc_first = "bug_first"
+dialogue_npc_second = "bug_second"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0gmcx")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 7)
+shape = SubResource("CircleShape2D_rbkso")
