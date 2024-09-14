@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dqlr3griq8byv" path="res://Assets/Prefabs/tilemaps.tscn" id="7_78n8q"]
 [ext_resource type="Texture2D" uid="uid://drdvx74wtqcvs" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/npc.tscn" id="13_gxk5x"]
+[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/Prefabs/npc.tscn" id="13_gxk5x"]
 [ext_resource type="Resource" uid="uid://bdpftqisltlfe" path="res://Assets/NPC interactions/npc_basic_dialogue.dialogue" id="16_y8phi"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prw3c"]
 size = Vector2(130, 130)
@@ -16,7 +15,6 @@ size = Vector2(130, 130)
 position = Vector2(604, 319)
 
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
-collision_layer = 2
 
 [node name="Coin" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(-199, -57)

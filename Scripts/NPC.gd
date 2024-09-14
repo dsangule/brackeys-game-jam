@@ -4,8 +4,6 @@ class_name NPC extends Interactable
 @export var dialogue_start: String = "this_is_a_node_title"
 @export var dialogue_second: String = "second_time"
 
-
-
 func action() ->void:
 	print("Player is interacting with NPC")
 	if(has_met_player == false):
