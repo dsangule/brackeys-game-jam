@@ -1,8 +1,4 @@
-class_name NPC extends Area2D
-
-@export var interact_label = "none"
-@export var interact_type = "none"
-@export var interact_value = "none"
+class_name NPC extends Interactable
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "this_is_a_node_title"

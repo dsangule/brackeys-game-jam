@@ -44,18 +44,8 @@ func update_anim_params():
 
 
 # PLAYER	( Important )
-
 func player():
 	pass
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-			actionables[0].action()
-			input_vector = Vector2.ZERO
-			return
 
 
 
@@ -72,7 +62,10 @@ func _on_interaction_area_area_exited(area):
 func update_interactions():
 	if all_interactions:
 		interactLabel.text = all_interactions[0].interact_label
-
-
 	else:
 		interactLabel.text = ""
+
+func _unhandled_input(event: InputEvent) -> void:
+	if all_interactions:
+		if Input.is_action_just_pressed("ui_accept") and all_interactions[0].interact_type == "dialog":
+			all_interactions[0].action()
