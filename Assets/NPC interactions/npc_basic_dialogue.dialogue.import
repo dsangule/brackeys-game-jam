@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bdpftqisltlfe"
+path="res://.godot/imported/npc_basic_dialogue.dialogue-5b56893abd1684f69112b4a9aace6287.tres"
+
+[deps]
+
+source_file="res://Assets/NPC interactions/npc_basic_dialogue.dialogue"
+dest_files=["res://.godot/imported/npc_basic_dialogue.dialogue-5b56893abd1684f69112b4a9aace6287.tres"]
+
+[params]
+
+defaults=true
