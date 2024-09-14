@@ -18,7 +18,7 @@ func action() ->void:
 	print("Player is interacting with NPC")
 	#if(area.name == "Witch"):
 	if(has_met_player == false):
-a		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_npc_first)
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_npc_first)
 	else:
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_npc_second)
 	interact_with_player()
