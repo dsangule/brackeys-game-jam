@@ -42,15 +42,7 @@ func update_anim_params():
 		anim_tree.set("parameters/Attack/blend_position", direction)
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-			actionables[0].action()
-			input_vector = Vector2.ZERO
-			return
 # PLAYER	( Important )
-
 func player():
 	pass
 
@@ -73,7 +65,7 @@ func update_interactions():
 	else:
 		interactLabel.text = ""
 
-func interact_with_npc(npc: Node):
-	if npc is NPC:
-		print("Calling npc interaction")
-		npc.interact_with_player()  # Calls the NPC's interaction method
+func _unhandled_input(event: InputEvent) -> void:
+	if all_interactions:
+		if Input.is_action_just_pressed("ui_accept") and all_interactions[0].interact_type == "dialog":
+			all_interactions[0].action()

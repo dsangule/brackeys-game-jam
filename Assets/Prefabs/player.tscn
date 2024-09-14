@@ -909,12 +909,14 @@ states/Start/position = Vector2(173, 107)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_m42af")
 states/Walk/position = Vector2(577, 200)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_pc5xw"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_f6xdu"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4gsv2"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_ti21s"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ahah2"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_gttkt"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_4wlw4")]
+graph_offset = Vector2(38.25, -1.3446e-05)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryui6"]
 radius = 14.0
 height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_b36x2")
 
 [node name="Body" type="Sprite2D" parent="."]
