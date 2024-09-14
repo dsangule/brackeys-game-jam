@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwqtebst0j8xg"]
+
+[ext_resource type="Texture2D" uid="uid://dgbn27engtgom" path="res://Assets/Sample/Blue Witch/Blue_witch/B_witch_idle.png" id="1_4b2ew"]
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_qk72u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqkmc"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sknvh"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqu1g"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7tli"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvc6v"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhaal"]
+atlas = ExtResource("1_4b2ew")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xvcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqkmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sknvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqu1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7tli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvc6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhaal")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytsg1"]
+radius = 27.0185
+
+[node name="Witch" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+collision_layer = 512
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_qk72u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0xvcs")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ytsg1")
