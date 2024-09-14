@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 var input_vector: Vector2 = Vector2.ZERO
 
-@export var speed = 300.0
+@export var speed = 8000.0
 var direction = Vector2.ZERO
 
 var isMoving = false
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if direction:
-		velocity = direction * speed
+		velocity = direction * speed * delta
 	else:
 		velocity = Vector2.ZERO
 	
@@ -49,6 +49,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			actionables[0].action()
 			input_vector = Vector2.ZERO
 			return
+# PLAYER	( Important )
+
+func player():
+	pass
+
 
 
 # INTERACTION METHODS

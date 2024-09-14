@@ -10,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bgc7r8ro32l8g" path="res://Assets/sprites/env/Water_Middle.png" id="8_j375t"]
 [ext_resource type="Texture2D" uid="uid://bk4l1a46vir0" path="res://Assets/sprites/env/Water_Tile.png" id="9_3ftoo"]
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
-[ext_resource type="Texture2D" uid="uid://c0dnautyxlwah" path="res://icon.svg" id="11_bjxvv"]
+[ext_resource type="Texture2D" uid="uid://drdvx74wtqcvs" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
-[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/NPC interactions/interact_area.tscn" id="13_gxk5x"]
+[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/Prefabs/npc.tscn" id="13_gxk5x"]
 [ext_resource type="Resource" uid="uid://bdpftqisltlfe" path="res://Assets/NPC interactions/npc_basic_dialogue.dialogue" id="16_y8phi"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/enemy.tscn" id="13_6wiar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
@@ -237,6 +238,7 @@ position = Vector2(604, 319)
 
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
 collision_layer = 2
+speed = 200.0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
