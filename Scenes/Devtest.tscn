@@ -10,12 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bgc7r8ro32l8g" path="res://Assets/sprites/env/Water_Middle.png" id="8_j375t"]
 [ext_resource type="Texture2D" uid="uid://bk4l1a46vir0" path="res://Assets/sprites/env/Water_Tile.png" id="9_3ftoo"]
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
-[ext_resource type="Texture2D" uid="uid://c0dnautyxlwah" path="res://icon.svg" id="11_bjxvv"]
+[ext_resource type="Texture2D" uid="uid://drdvx74wtqcvs" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="PackedScene" uid="uid://pxglbsxikuhi" path="res://Assets/Prefabs/enemy.tscn" id="13_qgfun"]
->>>>>>> Stashed changes
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/enemy.tscn" id="13_6wiar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
@@ -253,12 +250,7 @@ position = Vector2(604, 319)
 
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
 collision_layer = 2
-<<<<<<< Updated upstream
-=======
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
->>>>>>> Stashed changes
+speed = 8000.0
 
 [node name="Coin" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(-199, -57)
@@ -289,5 +281,5 @@ interact_value = "0"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
 shape = SubResource("RectangleShape2D_prw3c")
 
-[node name="Skeleton" parent="." instance=ExtResource("13_qgfun")]
-position = Vector2(-98, -88)
+[node name="Skeleton" parent="." instance=ExtResource("13_6wiar")]
+position = Vector2(157, 150)
