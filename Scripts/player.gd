@@ -59,6 +59,7 @@ func player():
 # INTERACTION METHODS
 
 func _on_interaction_area_area_entered(area):
+	#print("Entered area:", area.name)
 	all_interactions.insert(0, area)
 	update_interactions()
 
@@ -69,7 +70,10 @@ func _on_interaction_area_area_exited(area):
 func update_interactions():
 	if all_interactions:
 		interactLabel.text = all_interactions[0].interact_label
-
-
 	else:
 		interactLabel.text = ""
+
+func interact_with_npc(npc: Node):
+	if npc is NPC:
+		print("Calling npc interaction")
+		npc.interact_with_player()  # Calls the NPC's interaction method
