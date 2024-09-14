@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b4it52iicxrkh"]
+[gd_scene load_steps=24 format=4 uid="uid://b4it52iicxrkh"]
 
 [ext_resource type="PackedScene" uid="uid://dg6tjqplm3ce8" path="res://Assets/Prefabs/player.tscn" id="1_4h6vs"]
 [ext_resource type="PackedScene" uid="uid://cwt2puq3mm1t3" path="res://Assets/sprites/coin.tscn" id="2_t35df"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
 [ext_resource type="Texture2D" uid="uid://c0dnautyxlwah" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://pxglbsxikuhi" path="res://Assets/Prefabs/enemy.tscn" id="13_qgfun"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
@@ -249,6 +253,12 @@ position = Vector2(604, 319)
 
 [node name="Player" parent="." instance=ExtResource("1_4h6vs")]
 collision_layer = 2
+<<<<<<< Updated upstream
+=======
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+>>>>>>> Stashed changes
 
 [node name="Coin" parent="." instance=ExtResource("2_t35df")]
 position = Vector2(-199, -57)
@@ -278,3 +288,6 @@ interact_value = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
 shape = SubResource("RectangleShape2D_prw3c")
+
+[node name="Skeleton" parent="." instance=ExtResource("13_qgfun")]
+position = Vector2(-98, -88)

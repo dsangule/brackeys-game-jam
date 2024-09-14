@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var all_interactions = []
 @onready var interactLabel = $"Interaction Components/InteractLabel"
 
-@export var speed = 300.0
+@export var speed = 8000.0
 var direction = Vector2.ZERO
 
 var isMoving = false
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if direction:
-		velocity = direction * speed
+		velocity = direction * speed * delta
 	else:
 		velocity = Vector2.ZERO
 	
@@ -39,6 +39,11 @@ func update_anim_params():
 		anim_tree.set("parameters/Attack/blend_position", direction)
 
 
+
+# PLAYER	( Important )
+
+func player():
+	pass
 
 
 
