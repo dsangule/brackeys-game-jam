@@ -11,12 +11,14 @@ var input_vector: Vector2 = Vector2.ZERO
 @export var speed = 8000.0
 var direction = Vector2.ZERO
 
-var isMoving = false
-var isAttacking = false
+var canMove = true
+var canAttack = true
 
 func _ready():
 	update_interactions()
-
+	DialogueManager.dialogue_ended.connect(setCanAttack) #returns a DialogueResource back idk why, but made the function to accept something
+	DialogueManager.dialogue_ended.connect(setCanMove) #returns a DialogueResource back idk why, but made the function to accept something
+	
 func _process(delta):
 	update_anim_params()
 
@@ -24,7 +26,7 @@ func _physics_process(delta):
 	velocity = Vector2()
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
-	if direction:
+	if direction && canMove:
 		velocity = direction * speed * delta
 	else:
 		velocity = Vector2.ZERO
@@ -34,7 +36,7 @@ func _physics_process(delta):
 func update_anim_params():
 	anim_tree.set("parameters/conditions/isIdle", velocity == Vector2.ZERO)
 	anim_tree.set("parameters/conditions/isMoving", velocity != Vector2.ZERO)
-	anim_tree.set("parameters/conditions/isAttacking", Input.is_action_just_pressed("attack"))
+	anim_tree.set("parameters/conditions/isAttacking", Input.is_action_just_pressed("attack") && canAttack)
 	
 	if direction != Vector2.ZERO:
 		anim_tree.set("parameters/Idle/blend_position", direction)
@@ -46,8 +48,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			actionables[0].action()
-			input_vector = Vector2.ZERO
+			if actionables[0].has_method("action") :
+				actionables[0].action()
+				canMove = false
+				canAttack = false
 			return
 # PLAYER	( Important )
 
@@ -77,3 +81,10 @@ func interact_with_npc(npc: Node):
 	if npc is NPC:
 		print("Calling npc interaction")
 		npc.interact_with_player()  # Calls the NPC's interaction method
+
+# Testing
+func setCanMove(something): #returns a DialogueResource back idk why, but made the function to accept something
+	canMove=true
+
+func setCanAttack(something):
+	canAttack=true
