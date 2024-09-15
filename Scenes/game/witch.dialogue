@@ -16,11 +16,14 @@ Witch: Now that you mentioned, in his absence, you'd be the natural heir to this
 Me: [wait=1]Me?
 Witch: Yes. I'm sure your grandfather has passed down his skills to his kin.
 Me: I'm just an ordinary kid.
-Witch: In that case we should test your mettle. 
+Witch: In that case we should test your mettle.
+	Bring me the four coins located in the forest and I'll perform the ritual.
+Me: ... will that bring my grandpa back?
+Witch: Sure, I guess.
 => END
 
 ~ witch_second
-Witch: Bring me the required items and I shall perform the ritual.
+Witch: Bring me the four coins and I shall perform the ritual.
 => END
 
 ~ bug_first
