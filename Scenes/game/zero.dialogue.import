@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c3rh7pyrrthhl"
+path="res://.godot/imported/zero.dialogue-2de9ed3ab58677f0456317d25fa197a7.tres"
+
+[deps]
+
+source_file="res://Scenes/game/zero.dialogue"
+dest_files=["res://.godot/imported/zero.dialogue-2de9ed3ab58677f0456317d25fa197a7.tres"]
+
+[params]
+
+defaults=true

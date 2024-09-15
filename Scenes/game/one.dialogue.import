@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dkdm87tncm3se"
+path="res://.godot/imported/one.dialogue-b2e9a65289265a7f26e94c7e7a457208.tres"
+
+[deps]
+
+source_file="res://Scenes/game/one.dialogue"
+dest_files=["res://.godot/imported/one.dialogue-b2e9a65289265a7f26e94c7e7a457208.tres"]
+
+[params]
+
+defaults=true

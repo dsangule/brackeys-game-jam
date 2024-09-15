@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b4it52iicxrkh"]
+[gd_scene load_steps=28 format=4 uid="uid://b4it52iicxrkh"]
 
 [ext_resource type="PackedScene" uid="uid://dg6tjqplm3ce8" path="res://Assets/Prefabs/player.tscn" id="1_4h6vs"]
 [ext_resource type="PackedScene" uid="uid://cwt2puq3mm1t3" path="res://Assets/sprites/coin.tscn" id="2_t35df"]
@@ -12,10 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://ccen713m7ex8e" path="res://Assets/sprites/world_tileset.png" id="10_6sqs3"]
 [ext_resource type="Texture2D" uid="uid://drdvx74wtqcvs" path="res://icon.svg" id="11_bjxvv"]
 [ext_resource type="PackedScene" uid="uid://ymei86e4g8q4" path="res://Assets/Prefabs/interactable.tscn" id="12_lv7j1"]
-[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/Prefabs/npc.tscn" id="13_gxk5x"]
+[ext_resource type="PackedScene" uid="uid://dwqtebst0j8xg" path="res://Assets/Prefabs/Witch.tscn" id="13_gxk5x"]
 [ext_resource type="PackedScene" uid="uid://brurkv5hulays" path="res://Assets/Prefabs/bug.tscn" id="15_11n4l"]
 [ext_resource type="PackedScene" uid="uid://bcu0h8f482mln" path="res://Assets/Prefabs/stormnpc.tscn" id="16_3y4pe"]
 [ext_resource type="Resource" uid="uid://bdpftqisltlfe" path="res://Assets/NPC interactions/npc_basic_dialogue.dialogue" id="16_y8phi"]
+[ext_resource type="PackedScene" uid="uid://pxglbsxikuhi" path="res://Assets/Prefabs/enemy.tscn" id="17_8e62n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrerv"]
 resource_name = "cliff"
@@ -282,21 +283,18 @@ shape = SubResource("RectangleShape2D_prw3c")
 position = Vector2(71, -64)
 collision_layer = 514
 dialogue_resource = ExtResource("16_y8phi")
-dialogue_npc_first = "witch_first"
-dialogue_npc_second = "witch_second"
 
 [node name="Bug" parent="." instance=ExtResource("15_11n4l")]
 position = Vector2(151, -32)
 collision_layer = 514
 collision_mask = 0
 dialogue_resource = ExtResource("16_y8phi")
-dialogue_npc_first = "bug_first"
-dialogue_npc_second = "bug_second"
 
 [node name="StormPC" parent="." instance=ExtResource("16_3y4pe")]
 position = Vector2(-132, -60)
 collision_layer = 514
 collision_mask = 0
 dialogue_resource = ExtResource("16_y8phi")
-dialogue_npc_first = "storm_first"
-dialogue_npc_second = "storm_second"
+
+[node name="Skeleton" parent="." instance=ExtResource("17_8e62n")]
+position = Vector2(93, 178)

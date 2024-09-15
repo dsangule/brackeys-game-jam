@@ -975,9 +975,5 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Attack timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.2
-
 [connection signal="area_entered" from="Interaction Components/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="Interaction Components/InteractionArea" to="." method="_on_interaction_area_area_exited"]
