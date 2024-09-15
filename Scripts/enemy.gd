@@ -61,10 +61,12 @@ func _physics_process(delta):
 func update_anim_params():
 	anim_tree.set("parameters/conditions/isIdle", velocity == Vector2.ZERO)
 	anim_tree.set("parameters/conditions/isMoving", velocity != Vector2.ZERO)
+	anim_tree.set("parameters/conditions/attack", player_in_area)
 	
 	if direction != Vector2.ZERO:
 		anim_tree.set("parameters/Idle/blend_position", direction)
 		anim_tree.set("parameters/Walk/blend_position", direction)
+		anim_tree.set("parameters/Attack/blend_position", direction)
 
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
