@@ -73,9 +73,11 @@ func _on_interaction_area_area_exited(area):
 
 func update_interactions():
 	if all_interactions:
-		interactLabel.text = all_interactions[0].interact_label
+		if all_interactions.has("interact_label"):
+			interactLabel.text = all_interactions[0].interact_label
 	else:
-		interactLabel.text = ""
+		if all_interactions.has("interact_label"):
+			interactLabel.text = ""
 
 func interact_with_npc(npc: Node):
 	if npc is NPC:
