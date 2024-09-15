@@ -8,6 +8,6 @@ func _ready():
 	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_title)
 	#DialogueManager.dialogue_ended.connect(switchScene)
 	pass # Replace with function body.
-	
-func switchScene(something):
-	pass
+	#
+#func switchScene(something):
+	#pass

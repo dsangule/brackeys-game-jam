@@ -1,15 +1,29 @@
 ~ witch_first
 You meet a strange witch.
-???: Oi. [wait=1] What is a kid like you doing here?
+Witch: Oi. [wait=1] What is a kid like you doing here?
 Me: [speed=0.5] I'm [wait=0.3] looking for my grandpa. We are on a vacation. [wait=1] Have you seen him?
-???: .[wait=0.2].[wait=0.2].[wait=0.2]Grandpa? [wait=0.5] Do you mean the one who stays next to that campfire?
+Witch: .[wait=0.2].[wait=0.2].[wait=0.2]Grandpa? [wait=0.5] Do you mean the one who stays next to that campfire?
 Me: [speed=2] Yes! he's my grandpa. [wait=0.5] Have you seen him?
-???: I was hoping to meet him today. I have an important letter to deliver it to him.
-Me: I'm looking for him since the morning.
+Witch: I was hoping to meet him today. I have an important letter to deliver.
+Witch: (I should perhaps hand it over to him)
+The witch hands you over the scroll.
+You open the scroll.
+Djenka's Message: Guardian of the Forest,\nTime is of the essence. Djenka is afraid the prophecy will turn out to be true. Perform the forest ritual immediately.
+Me: What is this forest ritual?
+Witch: It's a secret whisper that brings upon the enemies from the other side of the forest. The forest lies between the two realms you see.
+Me: So you're saying my grandfather is the guardian of the forest?
+Witch: Now that you mentioned, in his absence, you'd be the natural heir to this forest.
+Me: [wait=1]Me?
+Witch: Yes. I'm sure your grandfather has passed down his skills to his kin.
+Me: I'm just an ordinary kid.
+Witch: In that case we should test your mettle.
+	Bring me the four coins located in the forest and I'll perform the ritual.
+Me: ... will that bring my grandpa back?
+Witch: Sure, I guess.
 => END
 
 ~ witch_second
-Witch: [[Hi|Hello|Howdy]], this is not the first dialogue.
+Witch: Bring me the four coins and I shall perform the ritual.
 => END
 
 ~ bug_first
