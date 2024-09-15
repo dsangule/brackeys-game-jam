@@ -16,10 +16,12 @@ Witch: Now that you mentioned, in his absence, you'd be the natural heir to this
 Me: [wait=1]Me?
 Witch: Yes. I'm sure your grandfather has passed down his skills to his kin.
 Me: I'm just an ordinary kid.
-Witch: In that case we should test your mettle.
-	Bring me the four coins located in the forest and I'll perform the ritual.
-Me: ... will that bring my grandpa back?
-Witch: Sure, I guess.
+Witch: Let me do the ritual for you.
+	*mumbles a spell*
+A loud boom is heard.
+Witch: Go slay the entity next to the camp. He's coming for you.
+Me: What!
+do spawnGlave()
 => END
 
 ~ witch_second

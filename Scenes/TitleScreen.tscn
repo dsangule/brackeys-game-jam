@@ -35,13 +35,14 @@ offset_top = 133.0
 offset_right = 766.0
 offset_bottom = 182.0
 size_flags_horizontal = 4
-text = "<<GAME TITLE>>"
+text = "Veil of the Ancients"
 label_settings = SubResource("LabelSettings_4fc0y")
 horizontal_alignment = 1
 uppercase = true
 text_direction = 1
 
 [node name="DevTest" type="Button" parent="."]
+visible = false
 offset_left = 352.0
 offset_top = 182.0
 offset_right = 768.0
@@ -54,6 +55,7 @@ text = "DEV TEST ENVIRONMENT"
 script = SubResource("GDScript_bm4nk")
 
 [node name="Continue" type="Button" parent="."]
+visible = false
 offset_left = 352.0
 offset_top = 264.0
 offset_right = 768.0
@@ -65,9 +67,9 @@ text = "CONTINUE"
 
 [node name="New Game" type="Button" parent="."]
 offset_left = 350.0
-offset_top = 367.0
+offset_top = 241.0
 offset_right = 766.0
-offset_bottom = 448.0
+offset_bottom = 322.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "New Game"
@@ -75,9 +77,9 @@ script = ExtResource("1_wnyda")
 
 [node name="Credits" type="Label" parent="."]
 offset_left = 350.0
-offset_top = 509.0
+offset_top = 383.0
 offset_right = 766.0
-offset_bottom = 532.0
+offset_bottom = 432.0
 size_flags_horizontal = 4
 text = "Made by Aeth, Deiz, & Xan
 2024"
