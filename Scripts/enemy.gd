@@ -8,7 +8,6 @@ var direction = Vector2.ZERO
 @export var patrolling_speed_modifier = 0.5
 @export var max_patrol_radius = 100.0
 @export var damage = 1
-@export var health = 100
 
 var player_in_area = false
 var player
